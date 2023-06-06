@@ -1,27 +1,27 @@
-import { Route, Routes } from "react-router";
-import { useDispatch } from "react-redux";
-import { useEffect } from "react";
-import { login } from "./redux/auth/actions";
-import { darkMode, lightMode } from "./redux/theme/actions";
-import auth from "./firebase/firebase";
+import { Route, Routes } from 'react-router';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { login } from 'redux/auth/actions';
+import { darkMode, lightMode } from 'redux/theme/actions';
+import auth from '../firebase/firebase';
 
-import Layout from "./components/Layout/Layout";
-import Login from "./components/Login/Login";
-import Register from "./components/Register/Register";
-import Reset from "./components/Reset/Reset";
-import SleepApp from "./pages/Sleep";
-import PrivateRoute from "./components/PrivateRoute";
-import PublicRoute from "./components/PublicRoute";
-import Dashboard from "./pages/Dashboard/Dashboard";
-import Information from "./pages/Information/Information";
-import Health from "./pages/Health/Health";
-import Settings from "./pages/Settings/Settings";
+import Layout from './Layout/Layout';
+import Login from './Login/Login';
+import Register from './Register/Register';
+import Reset from './Reset/Reset';
+import SleepApp from 'pages/Sleep';
+import PrivateRoute from './PrivateRoute';
+import PublicRoute from './PublicRoute';
+import Dashboard from 'pages/Dashboard/Dashboard';
+import Information from 'pages/Information/Information';
+import Health from 'pages/Health/Health';
+import Settings from 'pages/Settings/Settings';
 
 export const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const isDarkMode = JSON.parse(localStorage.getItem("isDarkMode"));
+    const isDarkMode = JSON.parse(localStorage.getItem('isDarkMode'));
 
     if (isDarkMode) {
       dispatch(darkMode());
@@ -31,7 +31,7 @@ export const App = () => {
   });
 
   useEffect(() => {
-    const user = JSON.parse(localStorage.getItem("user"));
+    const user = JSON.parse(localStorage.getItem('user'));
     if (user) {
       handleRefreshUser(user);
     } else {

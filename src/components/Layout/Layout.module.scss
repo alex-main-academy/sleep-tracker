@@ -1,0 +1,25 @@
+.layout {
+    height: 100vh;
+    width: 100vw;
+    background-image: linear-gradient(79deg, #7439db, #c66fbc 48%, #5a63e9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 150px;
+}
+
+.layout__logo {
+    max-width: 250px;
+    margin-bottom: 25px;
+}
+
+.layout__content {
+    text-align: center;
+}
+
+.layout__text {
+    text-align: center;
+    color: #ffffff;
+    font-size: 20px;
+    letter-spacing: 3px;
+}

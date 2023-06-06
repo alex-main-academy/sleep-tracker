@@ -1,0 +1,115 @@
+.header {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    height: 44px;
+}
+
+.header__theme {
+    position: relative;
+    border: none;
+    outline: none;
+    display: block;
+    width: 118px;
+    height: 100%;
+    background: #8367D6;
+    box-shadow: 0px 3px 25px rgba(35, 35, 35, 0.1);
+    border-radius: 30px;
+    transition-duration: 500ms;
+}
+
+.header__toggle {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    top: 50%;
+    left: 4px;
+    transform: translate(0, -50%);
+    transition-duration: 500ms;
+}
+
+.header__toggle_name {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-size: 14.5px;
+    color: #FFFFFF;
+    font-weight: 500;
+    transition-duration: 500ms;
+}
+
+.header__entry {
+    position: relative;
+    height: 100%;
+    width: 132px;
+    box-shadow: 0px 2px 14px rgba(35, 35, 35, 0.1);
+    border-radius: 25px;
+    padding-right: 19px;
+
+    font-size: 14px;
+    text-align: right;
+    transition-duration: 500ms;
+}
+
+.header__entry_top {
+    content: '';
+    position: absolute;
+    height: 11px;
+    width: 1px;
+    left: 27px;
+    top: 16px;
+    transition-duration: 500ms;
+}
+
+.header__entry_bottom {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 11px;
+    left: 22px;
+    top: 21px;
+    transition-duration: 500ms;
+}
+
+.header__notification {
+    transition-duration: 500ms;
+}
+
+.header__notification svg {
+    stroke: currentColor;
+}
+
+.header__user {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header__user_photo {
+    display: block;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+}
+
+.header__user_name {
+    font-size: 14px;
+    transition-duration: 500ms;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.header__accord {
+    transition-duration: 500ms;
+}
+
+.header__accord svg {
+    stroke: currentColor;
+}
