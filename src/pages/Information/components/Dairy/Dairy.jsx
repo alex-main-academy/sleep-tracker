@@ -23,7 +23,10 @@ const Dairy = () => {
         >
           Dream Diary
         </p>
-        <ul className={css.dairy__list}>
+        <ul
+          className={css.dairy__list}
+          style={isDarkMode ? { color: "#FFFFFF" } : { color: "#000000" }}
+        >
           {sleepsArray.length
             ? sleepsArray.map(
                 ({ _id, sleepDuration, date, timeGo, timeGot }) => {

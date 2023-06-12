@@ -59,9 +59,6 @@ const Login = () => {
       <Link to="register" className={css.login__link}>
         Don`t have an account? Register here.
       </Link>
-      <Link to="/reset" className={css.login__link}>
-        Forgot Password?
-      </Link>
     </div>
   );
 };

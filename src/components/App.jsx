@@ -8,7 +8,6 @@ import auth from "../firebase/firebase";
 import Layout from "./Layout/Layout";
 import Login from "./Login/Login";
 import Register from "./Register/Register";
-import Reset from "./Reset/Reset";
 import SleepApp from "pages/Sleep";
 import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
@@ -71,14 +70,6 @@ export const App = () => {
             }
           />
         </Route>
-        <Route
-          path="reset"
-          element={
-            <PublicRoute restricted>
-              <Reset />
-            </PublicRoute>
-          }
-        />
         <Route
           path="sleep"
           element={

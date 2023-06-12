@@ -49,7 +49,10 @@ const Chart = () => {
         colorRange={colorRange}
       />
       <p className={css.chart__quality}>
-        Sleep quality <span>{((good / (good + bad)) * 100).toFixed(0)}%</span>
+        Sleep quality{" "}
+        <span>
+          {good || bad ? ((good / (good + bad)) * 100).toFixed(0) : 0}%
+        </span>
       </p>
     </div>
   );

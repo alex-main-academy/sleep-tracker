@@ -1,6 +1,6 @@
-import { Outlet } from 'react-router';
-import css from './Layout.module.scss';
-import logo from '../../assets/img/layout/logo.png';
+import { Outlet } from "react-router";
+import css from "./Layout.module.scss";
+import logo from "../../assets/img/layout/logo.png";
 
 const Layout = () => {
   return (

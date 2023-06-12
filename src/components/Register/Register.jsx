@@ -2,13 +2,13 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { register } from "../../redux/auth/actions";
+import { createUser } from "../../redux/user/userSlice";
+import { baseAPI } from "../baseAPI";
 import css from "./Register.module.scss";
 import auth from "../../firebase/firebase";
 import Loader from "../Loader/Loader";
 import Notiflix from "notiflix";
 import axios from "axios";
-import { createUser } from "../../redux/user/userSlice";
-import { baseAPI } from "../baseAPI";
 
 const Register = () => {
   const dispatch = useDispatch();
