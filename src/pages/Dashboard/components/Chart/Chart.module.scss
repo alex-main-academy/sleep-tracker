@@ -1,0 +1,31 @@
+.chart {
+    position: relative;
+    height: 290px;
+    background-color: #FFFFFF;
+    width: 290px;
+    box-shadow: 0px 2px 14px rgba(35, 35, 35, 0.1);
+    border-radius: 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition-duration: 500ms;
+}
+
+.chart__quality {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.chart__quality span {
+    font-size: 30px;
+    font-weight: 600;
+}

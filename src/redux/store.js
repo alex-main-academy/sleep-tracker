@@ -4,10 +4,7 @@ import thunk from "redux-thunk";
 
 const initialState = {
   isAuth: false,
-  user: {
-    name: null,
-    email: null,
-  },
+  user: {},
   isDarkMode: false,
 };
 
@@ -50,6 +47,16 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         isDarkMode: false,
+      };
+    case "createUser":
+      return {
+        ...state,
+        user: { ...action.payload },
+      };
+    case "getCurrentUser":
+      return {
+        ...state,
+        user: { ...action.payload },
       };
     default:
       return state;

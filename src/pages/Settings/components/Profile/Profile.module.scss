@@ -1,0 +1,79 @@
+.profile {
+    max-width: 695px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 14px rgba(35, 35, 35, 0.1);
+    border-radius: 20px;
+    margin-top: 50px;
+    padding: 20px 44px 30px 44px;
+    transition-duration: 500ms;
+}
+
+.profile__title {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.profile__block {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.profile__number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #8367D6;
+    box-shadow: 0px 4px 10px rgba(103, 7, 229, 0.2);
+    border-radius: 10px;
+    width: 40px;
+    height: 40px;
+
+    font-size: 20px;
+    font-weight: 500;
+    color: #FFFFFF;
+}
+
+.profile__subtitle {
+    margin-left: 20px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.profile__theme {
+    z-index: 1;
+    position: relative;
+    margin-left: auto;
+    border: none;
+    outline: none;
+    display: block;
+    width: 90px;
+    height: 34px;
+    background-color: #8367D6;
+    box-shadow: 0px 3px 25px rgba(35, 35, 35, 0.1);
+    border-radius: 30px;
+    transition-duration: 500ms;
+}
+
+.profile__toggle {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    top: 50%;
+    left: 4px;
+    transform: translate(0, -50%);
+    transition-duration: 500ms;
+}
+
+.profile__toggle_name {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-size: 12px;
+    color: #FFFFFF;
+    font-weight: 500;
+    transition-duration: 500ms;
+}

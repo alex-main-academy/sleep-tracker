@@ -113,3 +113,49 @@
 .header__accord svg {
     stroke: currentColor;
 }
+
+.entry__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    background-color: #FFFFFF;
+    padding: 10px;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 0 10px 5px #8367d66e;
+    color: #8367D6;
+
+    animation-name: close;
+    animation-duration: 3000ms;
+    animation-iteration-count: infinite;
+}
+
+.entry__close svg {
+    fill: currentColor;
+    display: block;
+}
+
+@keyframes close {
+    0% {
+        background-color: #FFFFFF;
+        color: #8367D6;
+    }
+
+    50% {
+        background-color: #8367D6;
+        color: #FFFFFF;
+    }
+
+    100% {
+        background-color: #FFFFFF;
+        color: #8367D6;
+    }
+}

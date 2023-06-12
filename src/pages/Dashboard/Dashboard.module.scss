@@ -14,3 +14,10 @@
     font-size: 14px;
     transition-duration: 500ms;
 }
+
+.dashboard__content {
+    margin-top: 35px;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}

@@ -6,6 +6,9 @@ import css from "./Register.module.scss";
 import auth from "../../firebase/firebase";
 import Loader from "../Loader/Loader";
 import Notiflix from "notiflix";
+import axios from "axios";
+import { createUser } from "../../redux/user/userSlice";
+import { baseAPI } from "../baseAPI";
 
 const Register = () => {
   const dispatch = useDispatch();
@@ -13,6 +16,16 @@ const Register = () => {
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
   const [displayName, setName] = useState(null);
+
+  const handleCreateUser = async (user) => {
+    try {
+      const response = await axios.post(`${baseAPI}/api/users`, user);
+      dispatch(createUser(response.data.data.user));
+      return response.data;
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   const handleRegistration = async (e) => {
     e.preventDefault();
@@ -31,6 +44,7 @@ const Register = () => {
       localStorage.setItem("user", JSON.stringify({ email, password }));
 
       dispatch(register({ name, email }));
+      handleCreateUser({ name, email });
       setIsLogged(false);
       Notiflix.Notify.success("You have successfully created your account");
     } catch (error) {

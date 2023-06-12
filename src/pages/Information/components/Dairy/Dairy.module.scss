@@ -1,0 +1,70 @@
+.dairy {
+    width: 60%;
+    max-height: calc(100vh - 190px);
+    overflow-y: scroll;
+    box-shadow: 0px 2px 14px rgba(35, 35, 35, 0.1);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    padding: 20px 44px 44px 44px;
+    transition-duration: 500ms;
+}
+
+.dairy::-webkit-scrollbar {
+    background-color: rgb(230, 230, 230);
+    width: 10px;
+}
+
+.dairy::-webkit-scrollbar-thumb {
+    background-color: #c3b1f9;
+    border-radius: 20px;
+}
+
+.dairy__title {
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 25px;
+    transition-duration: 500ms;
+}
+
+.dairy__list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.dairy__item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid;
+    padding-bottom: 14px;
+    transition-duration: 500ms;
+}
+
+.dairy__icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #8367D6;
+    border-radius: 10px;
+}
+
+.dairy__subtitle {
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 20px;
+    transition-duration: 500ms;
+}
+
+.dairy__timer {
+    margin-left: auto;
+}
+
+.dairy__date {
+    margin-left: 18px;
+    font-size: 16px;
+    font-weight: 500;
+    transition-duration: 500ms;
+    width: 200px;
+}
