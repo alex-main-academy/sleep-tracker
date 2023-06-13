@@ -31,7 +31,7 @@ const Profile = () => {
       <p className={css.profile__title}>Profile settings</p>
       <div className={css.profile__block}>
         <span className={css.profile__number}>01</span>
-        <p className={css.profile__subtitle}>Change the topic</p>
+        <p className={css.profile__subtitle}>Change the theme</p>
         <button
           type="button"
           className={css.profile__theme}

@@ -52,7 +52,7 @@ const Features = () => {
       }
     >
       <div className={css.features__user}>
-        <img src={userImage} alt="" />
+        <img src={userImage} alt="" width={150} height={150} />
         <span>{userName}</span>
       </div>
       <div className={css.features__block} onClick={handleOpenHeightModal}>
