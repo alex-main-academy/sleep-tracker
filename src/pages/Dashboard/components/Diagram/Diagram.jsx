@@ -17,7 +17,8 @@ const Diagram = () => {
 
   useEffect(() => {
     if (sleeps) {
-      const chartData = sleeps.map((sleep, index) => ({
+      const reversedSleeps = sleeps.slice().reverse();
+      const chartData = reversedSleeps.map((sleep, index) => ({
         x: index,
         y: parseInt(sleep.durationHours),
       }));

@@ -30,30 +30,36 @@ const Entry = () => {
     const wakeupTimeHours = parseInt(timeGot.split(":")[0]);
     const wakeupTimeMinutes = parseInt(timeGot.split(":")[1]);
 
-    let durationHours = wakeupTimeHours - bedtimeHours;
-    let durationMinutes = wakeupTimeMinutes - bedtimeMinutes;
+    let durationHours, durationMinutes;
 
-    if (durationHours <= 0) {
-      Notiflix.Notify.failure("Enter the correct data please...");
-      return;
+    if (
+      wakeupTimeHours > bedtimeHours ||
+      (wakeupTimeHours === bedtimeHours && wakeupTimeMinutes >= bedtimeMinutes)
+    ) {
+      durationHours = wakeupTimeHours - bedtimeHours;
+      durationMinutes = wakeupTimeMinutes - bedtimeMinutes;
     } else {
-      if (durationMinutes < 0) {
-        durationHours--;
-        durationMinutes = 60 - Math.abs(durationMinutes);
-      }
-
-      const sleepDuration = `${durationHours}h ${durationMinutes}m`;
-
-      handleAddTimeToUser({
-        date,
-        timeGo,
-        timeGot,
-        sleepDuration,
-        durationHours,
-      });
-      handleGetCurrentUser();
-      Notiflix.Notify.success("You add this data to your dairy");
+      durationHours = 24 - bedtimeHours + wakeupTimeHours;
+      durationMinutes = wakeupTimeMinutes - bedtimeMinutes;
     }
+
+    if (durationMinutes < 0) {
+      durationHours--;
+      durationMinutes = 60 - Math.abs(durationMinutes);
+    }
+
+    const sleepDuration = `${durationHours}h ${durationMinutes}m`;
+
+    handleAddTimeToUser({
+      date,
+      timeGo,
+      timeGot,
+      sleepDuration,
+      durationHours,
+    });
+
+    handleGetCurrentUser();
+    Notiflix.Notify.success("You added this data to your diary");
   };
 
   const handleAddTimeToUser = async ({
