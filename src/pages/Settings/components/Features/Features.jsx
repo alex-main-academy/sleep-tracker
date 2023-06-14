@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { useState } from "react";
+import { baseAPI } from "../../../../components/baseAPI";
 import css from "./Features.module.scss";
 import userImage from "../../img/user.png";
 import changeIcon from "../../img/change-icon.png";
@@ -14,6 +15,7 @@ const Features = () => {
   const userHeight = useSelector((state) => state.user.height);
   const userWeight = useSelector((state) => state.user.weight);
   const userAge = useSelector((state) => state.user.age);
+  const userAvatar = useSelector((state) => state.user.avatar);
 
   const [isAnyModalOpen, setIsAnyModalOpen] = useState(false);
   const [modalHeight, setModalHeight] = useState(false);
@@ -52,7 +54,16 @@ const Features = () => {
       }
     >
       <div className={css.features__user}>
-        <img src={userImage} alt="" width={150} height={150} />
+        <img
+          src={
+            userAvatar
+              ? `${baseAPI}/api/users/uploads/${userAvatar}`
+              : userImage
+          }
+          alt=""
+          width={150}
+          height={150}
+        />
         <span>{userName}</span>
       </div>
       <div className={css.features__block} onClick={handleOpenHeightModal}>

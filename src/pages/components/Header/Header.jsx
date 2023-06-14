@@ -11,6 +11,7 @@ import { baseAPI } from "../../../components/baseAPI";
 import { getCurrentUser } from "../../../redux/user/userSlice";
 
 const Header = () => {
+  const userAvatar = useSelector((state) => state.user.avatar);
   const userEmail = useSelector((state) => state.user.email);
   const isDarkMode = useSelector((state) => state.isDarkMode);
   const userName = useSelector((state) => state.user.name);
@@ -114,7 +115,15 @@ const Header = () => {
         </svg>
       </button>
       <div className={css.header__user}>
-        <img src={userImage} alt="" className={css.header__user_photo} />
+        <img
+          src={
+            userAvatar
+              ? `${baseAPI}/api/users/uploads/${userAvatar}`
+              : userImage
+          }
+          alt=""
+          className={css.header__user_photo}
+        />
         <span
           className={css.header__user_name}
           style={isDarkMode ? { color: "#FFFFFF" } : { color: "#232B36" }}

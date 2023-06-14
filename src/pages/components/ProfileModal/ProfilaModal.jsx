@@ -1,8 +1,10 @@
 import { useSelector } from "react-redux";
 import css from "./ProfilaModal.module.scss";
 import userImage from "../../../assets/img/header/user-big.png";
+import { baseAPI } from "../../../components/baseAPI";
 
 const ProfileModal = () => {
+  const userAvatar = useSelector((state) => state.user.avatar);
   const isDarkMode = useSelector((state) => state.isDarkMode);
   const userName = useSelector((state) => state.user.name);
   const userHeight = useSelector((state) => state.user.height);
@@ -20,7 +22,16 @@ const ProfileModal = () => {
       }
     >
       <div className={css.modal__user}>
-        <img src={userImage} alt="" width={150} height={150} />
+        <img
+          src={
+            userAvatar
+              ? `${baseAPI}/api/users/uploads/${userAvatar}`
+              : userImage
+          }
+          alt=""
+          width={150}
+          height={150}
+        />
         <span>{userName}</span>
       </div>
       <ul className={css.modal__list}>
